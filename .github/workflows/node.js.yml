@@ -30,6 +30,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
+        permissions:
+          contents: write
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages               # GitHub Pages branch
