@@ -29,4 +29,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages               # GitHub Pages branch
-          folder: dist/PortFolio         # Path to Angular output folder
+          folder: dist/portfolio         # Path to Angular output folder
