@@ -22,11 +22,10 @@ jobs:
         run: npm ci
 
       - name: Generate .env from secrets
-        env:
-          EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }} 
-          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
-          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-        run: bash ./scripts/generate-env.sh
+        run: |
+          echo "EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}" >> .env 
+          echo "EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}" >> .env
+          echo "EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}" >> .env
 
       - name: Build Angular App
         run: |
