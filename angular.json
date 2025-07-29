@@ -23,7 +23,7 @@
                 "externals":"replace"
               }
             },
-            "outputPath":"dist/custom_build",
+            "outputPath":"dist",
             "index": "src/index.html",
             "main":"src/main.ts",
             "polyfills": [
