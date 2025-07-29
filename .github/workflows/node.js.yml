@@ -23,9 +23,9 @@ jobs:
 
       - name: Build Angular App
         env:
-          EMAILJS_PUBLIC_KEY: ${{ secret.EMAILJS_PUBLIC_KEY }} 
-          EMAILJS_TEMPLATE_ID: ${{ secret.EMAILJS_TEMPLATE_ID }}
-          EMAILJS_SERVICE_ID: ${{ secret.EMAILJS_SERVICE_ID }}
+          EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }} 
+          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
         run: |
           npm run build -- --configuration production --base-href "/PortFolio/"
 
