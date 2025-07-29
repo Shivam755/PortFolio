@@ -15,9 +15,17 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "browser": "src/main.ts",
+            "customWebpackConfig":{
+              "path": "./custom-webpack.config.js",
+              "mergeRules":{
+                "externals":"replace"
+              }
+            },
+            "outputPath":"dist/custom_build",
+            "index": "src/index.html",
+            "main":"src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -31,12 +39,7 @@
             ],
             "styles": [
               "src/styles.scss"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -63,7 +66,10 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "buildTarget": "my-project:build"
+          },
           "configurations": {
             "production": {
               "buildTarget": "portfolio:build:production"

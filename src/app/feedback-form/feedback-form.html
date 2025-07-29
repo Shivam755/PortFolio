@@ -1,0 +1,11 @@
+<form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <label>Name</label>
+  <input type="text" name="name" formControlName="name"/>
+  <label>Email</label>
+  <input type="email" name="email" formControlName="email"/>
+  <label>Subject</label>
+  <input type="text" name="title" formControlName="title"/>
+  <label>Message</label>
+  <textarea name="message" formControlName="message"></textarea>
+  <input type="submit" value="Send" />
+</form>
